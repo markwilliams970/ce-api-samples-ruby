@@ -1,0 +1,510 @@
+==========================================================================================
+Customer JSON
+{
+  "primaryEmailAddr": {
+    "address": "jjefferson@yahoo.com"
+  },
+  "familyName": "Jefferson",
+  "givenName": "Jack",
+  "title": "Mr.",
+  "billAddr": {
+    "postalCode": "80203",
+    "countrySubDivisionCode": "CO",
+    "line1": "123 Elm Court",
+    "city": "Denver"
+  },
+  "fax": {
+    "freeFormNumber": "(303) 555-2222"
+  },
+  "primaryPhone": {
+    "freeFormNumber": "720-555-6579"
+  },
+  "notes": "My First QB Customer",
+  "mobile": {
+    "freeFormNumber": "(720) 111-2222"
+  }
+}
+
+==========================================================================================
+Employee
+{
+  "middleName": "M",
+  "primaryAddr": {
+    "postalCode": "80204",
+    "countrySubDivisionCode": "CO",
+    "line1": "301 Mexico Street",
+    "city": "Denver"
+  },
+  "primaryPhone": {
+    "freeFormNumber": "555-2601"
+  },
+  "ssn": "123-45-6789",
+  "familyName": "Jackson",
+  "givenName": "Dan"
+}
+
+==========================================================================================
+Vendor
+
+{
+  "taxIdentifier": "123-45-6789",
+  "billAddr": {
+    "postalCode": "80204",
+    "countrySubDivisionCode": "CO",
+    "line1": "123 Depaul",
+    "city": "Denver"
+  },
+  "fax": {
+    "freeFormNumber": "510 555 5733"
+  },
+  "acctNum": "1234567",
+  "familyName": "Johnson",
+  "givenName": "Jane",
+  "vendor1099": true,
+  "balance": 100.00,
+  "termRef": {
+    "value": "6"
+  },
+  "title": "Ms.",
+  "primaryPhone": {
+    "freeFormNumber": "720 555 5723"
+  }
+}
+
+==========================================================================================
+Purchase Order
+
+
+{
+  "apaccountRef": {
+    "value": "68"
+  },
+  "vendorRef": {
+    "value": "160"
+  },
+  "shipAddr": {
+    "id": "601",
+    "line1": "Young-Kyu Yoo",
+    "line3": "Bayshore CA 94326",
+    "line2": "1967 Appleseed Lane"
+  },
+  "line": [
+    {
+      "amount": 4500,
+      "id": "1",
+      "detailType": "ITEM_BASED_EXPENSE_LINE_DETAIL",
+      "itemBasedExpenseLineDetail": {
+        "itemRef": {
+          "value": "98"
+        },
+        "customerRef": {
+          "value": "99"
+        },
+        "qty": 45,
+        "unitPrice": 100,
+        "billableStatus": "NOT_BILLABLE",
+        "classRef": {
+          "value": "3000000000000593299"
+        }
+      }
+    }
+  ],
+  "totalAmt": 4500,
+  "docNumber": "56469831347"
+}
+
+RESPONSE
+
+{
+  "id": "1987|0",
+  "vendorRef": {
+    "name": "A Cheung Limited",
+    "value": "160"
+  },
+  "apaccountRef": {
+    "name": "20000 Accounts Payable",
+    "value": "68"
+  },
+  "domain": "QBO",
+  "line": [
+    {
+      "amount": 4500,
+      "id": "1",
+      "detailType": "ITEM_BASED_EXPENSE_LINE_DETAIL",
+      "itemBasedExpenseLineDetail": {
+        "itemRef": {
+          "name": "Lumber:Rough",
+          "value": "98"
+        },
+        "customerRef": {
+          "name": "Yoo, Young-Kyu:Repairs",
+          "value": "99"
+        },
+        "qty": 45,
+        "unitPrice": 100,
+        "billableStatus": "NOT_BILLABLE",
+        "taxCodeRef": {
+          "value": "NON"
+        },
+        "classRef": {
+          "name": "Remodel",
+          "value": "3000000000000593299"
+        }
+      }
+    }
+  ],
+  "shipAddr": {
+    "id": "1643",
+    "line1": "Young-Kyu Yoo",
+    "line3": "Bayshore CA 94326",
+    "line2": "1967 Appleseed Lane"
+  },
+  "syncToken": "0",
+  "totalAmt": 4500,
+  "docNumber": "56469831347",
+  "sparse": false,
+  "metaData": {
+    "createTime": 1415153017000,
+    "lastUpdatedTime": 1415153017000
+  },
+  "txnDate": 1415059200000
+}
+
+==========================================================================================
+Journal Entry
+{
+    "line": [
+      {
+        "amount": 500,
+        "detailType": "JOURNAL_ENTRY_LINE_DETAIL",
+        "description": "2 Wood doors stolen from job site.Atul JE",
+        "journalEntryLineDetail": {
+          "postingType": "DEBIT",
+          "entity": {
+            "type": "CUSTOMER",
+            "entityRef": {
+              "value": "37"
+            }
+          },
+          "accountRef": {
+            "value": "79"
+          },
+          "classRef": {
+            "value": "3000000000000593298"
+          }
+        }
+      },
+      {
+        "amount": 500,
+        "detailType": "JOURNAL_ENTRY_LINE_DETAIL",
+        "description": "Exterior - Exterior Inventory Adjustment Atul JE",
+        "journalEntryLineDetail": {
+          "postingType": "CREDIT",
+          "accountRef": {
+            "value": "62"
+          },
+          "classRef": {
+            "value": "3000000000000593298"
+          }
+        }
+      }
+    ],
+    "privateNote": "Inventory Adjustment for Atul JE",
+    "totalAmt": 500,
+    "docNumber": "AtulRef2"
+}
+
+Response:
+{
+  "id": "1989|0",
+  "adjustment": false,
+  "domain": "QBO",
+  "line": [
+    {
+      "amount": 500,
+      "id": "0",
+      "detailType": "JOURNAL_ENTRY_LINE_DETAIL",
+      "description": "2 Wood doors stolen from job site.Atul JE",
+      "journalEntryLineDetail": {
+        "postingType": "DEBIT",
+        "entity": {
+          "type": "CUSTOMER",
+          "entityRef": {
+            "name": "Pretell Real Estate:155 Wilks Blvd.",
+            "value": "37"
+          }
+        },
+        "accountRef": {
+          "name": "50100 Cost of Goods Sold",
+          "value": "79"
+        },
+        "classRef": {
+          "name": "New Construction",
+          "value": "3000000000000593298"
+        }
+      }
+    },
+    {
+      "amount": 500,
+      "id": "1",
+      "detailType": "JOURNAL_ENTRY_LINE_DETAIL",
+      "description": "Exterior - Exterior Inventory Adjustment Atul JE",
+      "journalEntryLineDetail": {
+        "postingType": "CREDIT",
+        "accountRef": {
+          "name": "12100 Inventory Asset",
+          "value": "62"
+        },
+        "classRef": {
+          "name": "New Construction",
+          "value": "3000000000000593298"
+        }
+      }
+    }
+  ],
+  "syncToken": "0",
+  "privateNote": "Inventory Adjustment for Atul JE",
+  "totalAmt": 500,
+  "docNumber": "AtulRef2",
+  "sparse": false,
+  "metaData": {
+    "createTime": 1415153133000,
+    "lastUpdatedTime": 1415153133000
+  },
+  "txnDate": 1415059200000
+}
+
+==========================================================================================
+Invoice
+{
+    "line": [
+      {
+        "amount": 300,
+        "id": "1",
+        "detailType": "SALES_ITEM_LINE_DETAIL",
+        "salesItemLineDetail": {
+          "itemRef": {
+            "value": "42"
+          },
+          "unitPrice": 300,
+          "taxCodeRef": {
+            "value": "TAX"
+          },
+          "classRef": {
+            "value": "3000000000000593299"
+          }
+        },
+        "description": "Gas Rangetop",
+        "lineNum": 1
+      },
+      {
+        "amount": 700,
+        "detailType": "SALES_ITEM_LINE_DETAIL",
+        "salesItemLineDetail": {
+          "itemRef": {
+            "value": "42"
+          },
+          "unitPrice": 700,
+          "taxCodeRef": {
+            "value": "TAX"
+          },
+          "classRef": {
+            "value": "3000000000000593299"
+          }
+        },
+        "description": "Double oven",
+        "lineNum": 2
+      },
+      {
+        "detailType": "DESCRIPTION_ONLY",
+        "description": "Sample Description on Invoice",
+        "lineNum": 3
+      }
+    ],
+    "totalAmt": 1000,
+    "billAddr": {
+      "line1": "623 Deforest Ct",
+      "line2": "Middlefield CA 94482"
+    },
+    "shipAddr": {
+      "id": "568",
+      "line1": "Brian K. Cook",
+      "line3": "Middlefield, CA 94482",
+      "line2": "345 Cherry Lane"
+    },
+    "customerRef": {
+      "value": "26"
+    }
+}
+
+Response
+{
+  "allowOnlinePayment": false,
+  "billAddr": {
+    "id": "1644",
+    "line1": "623 Deforest Ct",
+    "line2": "Middlefield CA 94482"
+  },
+  "customField": [
+    {
+      "name": "P.O. Number",
+      "type": "STRING_TYPE",
+      "definitionId": "1"
+    },
+    {
+      "name": "Sales Rep",
+      "type": "STRING_TYPE",
+      "definitionId": "2"
+    }
+  ],
+  "deposit": 0,
+  "allowOnlineCreditCardPayment": false,
+  "printStatus": "NEED_TO_PRINT",
+  "shipAddr": {
+    "id": "1645",
+    "line1": "Brian K. Cook",
+    "line3": "Middlefield, CA 94482",
+    "line2": "345 Cherry Lane"
+  },
+  "line": [
+    {
+      "amount": 300,
+      "id": "1",
+      "detailType": "SALES_ITEM_LINE_DETAIL",
+      "salesItemLineDetail": {
+        "itemRef": {
+          "name": "Appliance",
+          "value": "42"
+        },
+        "unitPrice": 300,
+        "taxCodeRef": {
+          "value": "TAX"
+        },
+        "classRef": {
+          "name": "Remodel",
+          "value": "3000000000000593299"
+        }
+      },
+      "description": "Gas Rangetop",
+      "lineNum": 1
+    },
+    {
+      "amount": 700,
+      "id": "2",
+      "detailType": "SALES_ITEM_LINE_DETAIL",
+      "salesItemLineDetail": {
+        "itemRef": {
+          "name": "Appliance",
+          "value": "42"
+        },
+        "unitPrice": 700,
+        "taxCodeRef": {
+          "value": "TAX"
+        },
+        "classRef": {
+          "name": "Remodel",
+          "value": "3000000000000593299"
+        }
+      },
+      "description": "Double oven",
+      "lineNum": 2
+    },
+    {
+      "id": "3",
+      "detailType": "DESCRIPTION_ONLY",
+      "description": "Sample Description on Invoice",
+      "lineNum": 3
+    },
+    {
+      "amount": 1000,
+      "detailType": "SUB_TOTAL_LINE_DETAIL"
+    }
+  ],
+  "syncToken": "0",
+  "allowIPNPayment": false,
+  "totalAmt": 1000,
+  "docNumber": "1313",
+  "txnDate": 1415059200000,
+  "emailStatus": "NOT_SET",
+  "id": "1990|0",
+  "balance": 1000,
+  "customerRef": {
+    "name": "Kitchen",
+    "value": "26"
+  },
+  "applyTaxAfterDiscount": false,
+  "allowOnlineACHPayment": false,
+  "domain": "QBO",
+  "txnTaxDetail": {
+    "totalTax": 0
+  },
+  "sparse": false,
+  "dueDate": 1417651200000,
+  "metaData": {
+    "createTime": 1415153211000,
+    "lastUpdatedTime": 1415153211000
+  }
+}
+
+
+==========================================================================================
+Payment
+{
+  "depositToAccountRef": {
+    "value": "58"
+  },
+  "customerRef": {
+    "value": "35"
+  },
+  "line": [
+    {
+      "amount": 1000.00,
+      "linkedTxn": [
+        {
+          "txnType": "Invoice",
+          "txnId": "729"
+        }
+      ]
+    },
+    {
+      "amount": 1000.00,
+      "linkedTxn": [
+        {
+          "txnType": "Invoice",
+          "txnId": "730"
+        }
+      ]
+    }
+  ],
+  "paymentMethodRef": {
+    "value": "8"
+  },
+  "totalAmt": 2000.00
+}
+
+Response
+
+{
+  "id": "1991|0",
+  "processPayment": false,
+  "depositToAccountRef": {
+    "value": "58"
+  },
+  "customerRef": {
+    "name": "Natiello, Ernesto:Kitchen",
+    "value": "35"
+  },
+  "unappliedAmt": 2000,
+  "domain": "QBO",
+  "paymentMethodRef": {
+    "value": "8"
+  },
+  "syncToken": "0",
+  "totalAmt": 2000,
+  "sparse": false,
+  "metaData": {
+    "createTime": 1412205743000,
+    "lastUpdatedTime": 1412205743000
+  },
+  "txnDate": 1412139600000
+}
