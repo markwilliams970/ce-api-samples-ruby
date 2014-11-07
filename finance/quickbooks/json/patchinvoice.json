@@ -1,0 +1,20 @@
+{
+    "line": [
+      {
+        "amount": 900,
+        "detailType": "SALES_ITEM_LINE_DETAIL",
+        "salesItemLineDetail": {
+          "itemRef": {
+            "value": "42"
+          },
+          "unitPrice": 900
+        },
+        "description": "Double oven deluxe",
+        "lineNum": 2
+      }
+    ],
+    "totalAmt": 1200,
+    "customerRef": {
+      "value": "26"
+    }
+}

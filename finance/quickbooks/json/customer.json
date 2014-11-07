@@ -1,0 +1,24 @@
+{
+  "primaryEmailAddr": {
+    "address": "jfleischman@yahoo.com"
+  },
+  "familyName": "Fleischman",
+  "givenName": "Joel",
+  "title": "Dr.",
+  "billAddr": {
+    "postalCode": "98007",
+    "countrySubDivisionCode": "AK",
+    "line1": "123 Boreas Court",
+    "city": "Anchorage"
+  },
+  "fax": {
+    "freeFormNumber": "(907) 555-2222"
+  },
+  "primaryPhone": {
+    "freeFormNumber": "907-555-6579"
+  },
+  "notes": "My New QB Customer",
+  "mobile": {
+    "freeFormNumber": "(907) 111-2222"
+  }
+}

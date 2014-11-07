@@ -1,0 +1,60 @@
+{
+    "line": [
+      {
+        "amount": 300,
+        "id": "1",
+        "detailType": "SALES_ITEM_LINE_DETAIL",
+        "salesItemLineDetail": {
+          "itemRef": {
+            "value": "42"
+          },
+          "unitPrice": 300,
+          "taxCodeRef": {
+            "value": "TAX"
+          },
+          "classRef": {
+            "value": "3000000000000593299"
+          }
+        },
+        "description": "Gas Rangetop",
+        "lineNum": 1
+      },
+      {
+        "amount": 700,
+        "detailType": "SALES_ITEM_LINE_DETAIL",
+        "salesItemLineDetail": {
+          "itemRef": {
+            "value": "42"
+          },
+          "unitPrice": 700,
+          "taxCodeRef": {
+            "value": "TAX"
+          },
+          "classRef": {
+            "value": "3000000000000593299"
+          }
+        },
+        "description": "Double oven",
+        "lineNum": 2
+      },
+      {
+        "detailType": "DESCRIPTION_ONLY",
+        "description": "Sample Description on Invoice",
+        "lineNum": 3
+      }
+    ],
+    "totalAmt": 1000,
+    "billAddr": {
+      "line1": "623 Deforest Ct",
+      "line2": "Middlefield CA 94482"
+    },
+    "shipAddr": {
+      "id": "568",
+      "line1": "Brian K. Cook",
+      "line3": "Middlefield, CA 94482",
+      "line2": "345 Cherry Lane"
+    },
+    "customerRef": {
+      "value": "26"
+    }
+}
